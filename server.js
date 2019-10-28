@@ -17,7 +17,7 @@ app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
 
 //Routes will throw an error untill until controllers are added.
-var routes = require("./controllers/burgers_controller.js");
+var routes = require("./controllers/burger_controller");
 app.use(routes); 
 
 //shows up when node server.js is run in terminal

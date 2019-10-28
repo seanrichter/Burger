@@ -1,5 +1,5 @@
 var express = require("express");
-var burger = require("../models/burger");
+var burger = require("../models/burger.js");
 
 //this is where we build router connections
 var router = express.Router();
