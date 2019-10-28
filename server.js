@@ -16,9 +16,9 @@ app.use(bodyParser.json());
 app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
 
-/*Routes will throw an error untill until controllers are added.
+//Routes will throw an error untill until controllers are added.
 var routes = require("./controllers/burgers_controller.js");
-app.use(routes); */
+app.use(routes); 
 
 //shows up when node server.js is run in terminal
 app.listen(PORT, function () {
