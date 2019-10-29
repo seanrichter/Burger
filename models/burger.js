@@ -1,24 +1,24 @@
 //require orm
-var orm = require("../configuration/orm");
+var orm = require("../configuration/orm.js");
 
 var burger = {
-    selectAll: function (cb) {
-        orm.selectAll("burger", function (res) {
+    select: function (cb) {
+        orm.select("burger", function (res) {
             cb(res);
         });
-    }
+    },
     insert: function (cols, vals, cb) {
-        orm.selectAll("burger", cols, vals, function (res) {
+        orm.insert("burger", cols, vals, function (res) {
             cb(res);
         });
-    }
+    },
     update: function (objColVals, condition, cb) {
-        orm.selectAll("burger", objColVals, condition, function (res) {
+        orm.update("burger", objColVals, condition, function (res) {
             cb(res);
         });
-    }
+    },
     delete: function (condition, cb) {
-        orm.selectAll("burger", condition, function (res) {
+        orm.delete("burger", condition, function (res) {
             cb(res);
         });
     }

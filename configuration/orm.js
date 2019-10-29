@@ -25,7 +25,7 @@ function translateSql(obj) {
 
 //logic of the application
 var orm = {
-    selectAll: function (table, cb) {
+    select: function (table, cb) {
         var dbQuery = "SELECT * FROM " + table + ";";
 
         connection.query(dbQuery, function (err, res) {
@@ -34,7 +34,7 @@ var orm = {
             }
             cb(res); //callback
         })
-    }
+    },
     insert: function (table, cols, vals, cb) {
         var dbQuery = "INSERT INTO " + table + " (" + cols.toString() + "VALUES (" + createQmarks(vals.lenth) + ") ";
 
@@ -46,7 +46,7 @@ var orm = {
             }
             cb(res); //callback
         });
-    }
+    },
     update: function (table, objColVals, condition, cb) {
         var dbQuery = "UPDATE " + table + " SET " + translateSql(objColVals) + " WHERE " + condition;
         console.log(dbQuery);
@@ -70,3 +70,4 @@ var orm = {
         });
     }
 };
+module.exports = orm;

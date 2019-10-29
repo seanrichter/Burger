@@ -1,12 +1,12 @@
 var express = require("express");
-var burger = require("../models/burger.js");
+var burger = require("../models/burger");
 
 //this is where we build router connections
 var router = express.Router();
 
 //GET Router
 router.get("/", function (req, res) {
-    burger.selectAll(function (data) {
+    burger.select(function (data) {
         var hdbrsObj = {
             burger: data
         };
@@ -38,7 +38,7 @@ router.get("/", function (req, res) {
         })
     });
     // DELETE Router
-    router.delete(condition, function (req, res) {
+    router.delete("/api/burger/:id", function (req, res) {
         var condition = "id = " + req.params.id;
         console.log("condition", condition);
 
