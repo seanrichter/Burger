@@ -6,7 +6,7 @@ var app = express();
 var PORT = process.env.PORT || 3000;
 
 //connecting static files
-app.use(express.static("public"));
+app.use(express.static("assets"));
 
 //connecting body parser elements
 app.use(bodyParser.urlencoded({ extended: true }));

@@ -1,5 +1,4 @@
 $(function () {
-
     $(".create-form").on("submit", function (event) {
         event.preventDefault();
 
@@ -18,6 +17,7 @@ $(function () {
             location.reload();
         });
     });
+
 
     $(".eatburger").on("click", function (event) {
         event.preventDefault();
@@ -39,10 +39,10 @@ $(function () {
 
         var id = $(this).data("id");
 
-        //Send the delete request
+        // Send the DELETE request.
         $.ajax({
             type: "DELETE",
-            url: "/api/burgers/" + id
+            url: "/api/burger/" + id
         }).then(location.reload());
     });
 });
