@@ -33,7 +33,7 @@ var orm = {
                 throw err;
             }
             cb(res); //callback
-        })
+        });
     },
     insert: function (table, cols, vals, cb) {
         var dbQuery = "INSERT INTO " + table + " (" + cols.toString() + "VALUES (" + createQmarks(vals.lenth) + ") ";
