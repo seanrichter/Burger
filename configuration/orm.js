@@ -26,9 +26,9 @@ function translateSql(obj) {
 //logic of the application
 var orm = {
     select: function (table, cb) {
-        var dbQuery = "All * FROM " + table + ";";
+        var dataBaseQuery = "All * FROM " + table + ";";
 
-        connection.query(dbQuery, function (err, res) {
+        connection.query(dataBaseQuery, function (err, res) {
             if (err) {
                 throw err;
             }
@@ -36,11 +36,11 @@ var orm = {
         });
     },
     insert: function (table, cols, vals, cb) {
-        var dbQuery = "INSERT INTO " + table + " (" + cols.toString() + "VALUES (" + createQmarks(vals.lenth) + ") ";
+        var dataBaseQuery = "INSERT INTO " + table + " (" + cols.toString() + "VALUES (" + createQmarks(vals.lenth) + ") ";
 
-        console.log(dbQuery);
+        console.log(dataBaseQuery);
         //connect
-        connection.query(dbQuery, vals, function (err, res) {
+        connection.query(dataBaseQuery, vals, function (err, res) {
             if (err) {
                 throw err;
             }
@@ -48,10 +48,10 @@ var orm = {
         });
     },
     update: function (table, objColVals, condition, cb) {
-        var dbQuery = "UPDATE " + table + " SET " + translateSql(objColVals) + " WHERE " + condition;
-        console.log(dbQuery);
+        var dataBaseQuery = "UPDATE " + table + " SET " + translateSql(objColVals) + " WHERE " + condition;
+        console.log(dataBaseQuery);
         //connect
-        connection.query(dbQuery, vals, function (err, res) {
+        connection.query(dataBaseQuery, vals, function (err, res) {
             if (err) {
                 throw err;
             }
@@ -59,10 +59,10 @@ var orm = {
         });
     },
     delete: function (table, condition, cb) {
-        var dbQuery = "Delete From " + table + " WHERE " + condition;
-        console.log(dbQuery);
+        var dataBaseQuery = "Delete From " + table + " WHERE " + condition;
+        console.log(dataBaseQuery);
         //connect
-        connection.query(dbQuery, vals, function (err, res) {
+        connection.query(dataBaseQuery, vals, function (err, res) {
             if (err) {
                 throw err;
             }
