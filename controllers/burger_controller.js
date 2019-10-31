@@ -6,7 +6,7 @@ var router = express.Router();
 
 //GET Router
 router.get("/", function (req, res) {
-    burger.select(function (data) {
+    burger.selectAll(function (data) {
         var hdbrsObj = {
             burger: data
         };
