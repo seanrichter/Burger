@@ -18,7 +18,7 @@ app.set("view engine", "handlebars");
 
 //Routes will throw an error untill until controllers are added.
 var routes = require("./controllers/burger_controller");
-app.use(routes); 
+app.use(routes);
 
 //shows up when node server.js is run in terminal
 app.listen(PORT, function () {
