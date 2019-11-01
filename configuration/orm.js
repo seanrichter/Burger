@@ -1,5 +1,5 @@
 //connecting orm to connection file in configuration
-var connection = require("../configuration/connection");
+var connection = require("../configuration/connection.js");
 
 function createQmarks(num) {
     var arr = [];
