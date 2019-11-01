@@ -36,7 +36,7 @@
                 </div>
                 <div class="panel-body">
                     <ul>
-                        {{#each burgers}}
+                        {{#each burger}}
                         {{#unless devoured}}
 
                         <span><strong> {{this.id}} - {{this.burger_name}}</strong></span>
@@ -56,7 +56,7 @@
                 </div>
                 <div class="panel-body">
                     <ul>
-                        {{#each burgers}}
+                        {{#each burger}}
                         {{#if devoured}}
                         <span><strong> {{this.id}} - {{this.burger_name}}</strong></span>
                         <button type="button" class="trashburger btn btn-danger" id="trashbutton" data-id="{{this.id}}"
