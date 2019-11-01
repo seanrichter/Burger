@@ -9,7 +9,7 @@ function createQmarks(num) {
     return arr.toString();
 }
 
-function translateSql(obj) {
+function translateSql(ob) {
     var arr = [];
     for (var key in ob) {
         var value = ob[key];
@@ -26,7 +26,7 @@ function translateSql(obj) {
 //logic of the application
 var orm = {
     selectAll: function (table, cb) {
-        var dataBaseQuery = "All * FROM " + table + ";";
+        var dataBaseQuery = "SELECT * FROM " + table + ";";
 
         connection.query(dataBaseQuery, function (err, res) {
             if (err) {

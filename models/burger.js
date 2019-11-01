@@ -18,8 +18,8 @@ var burger = {
         });
     },
 
-    deleteOne: function (condition, cb) {
-        orm.deleteOne("burger", condition, function (res) {
+    delete: function (condition, cb) {
+        orm.delete("burger", condition, function (res) {
             cb(res);
         });
     }
